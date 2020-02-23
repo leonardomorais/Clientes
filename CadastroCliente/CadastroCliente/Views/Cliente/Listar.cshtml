@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CadastroCliente.Models.Cliente>
+@{
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="body-content">
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de nascimento</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">CEP</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Complemento</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col" colspan="2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cliente in Model)
+                {
+                    <tr>
+                        <td>@cliente.Nome</td>
+                        <td>@cliente.DataNascimento.ToString("dd/MM/yyyy")</td>
+                        <td>@cliente.Sexo</td>
+                        <td>@cliente.Cep</td>
+                        <td>@cliente.Endereco</td>
+                        <td>@cliente.Numero</td>
+                        <td>@cliente.Complemento</td>
+                        <td>@cliente.Bairro</td>
+                        <td>@cliente.Estado</td>
+                        <td>@cliente.Cidade</td>
+                        <td><a class="badge badge-warning" asp-controller="Cliente" asp-action="Editar" asp-route-id="@cliente.Id">Editar </a></td>
+                        <td><a style="cursor:pointer" class="badge badge-danger" onclick="Excluir(@cliente.Id)">Excluir </a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

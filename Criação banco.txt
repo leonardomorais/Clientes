@@ -1,0 +1,33 @@
+Foram executados os 3 comandos para criar o banco de dados, tabela e incluir dados inicias.
+
+1.
+CREATE DATABASE IF NOT EXISTS dbclientes
+CHARACTER SET UTF8 collate utf8_general_ci
+
+2.
+CREATE TABLE dbclientes.CLIENTE
+ (ID INTEGER AUTO_INCREMENT PRIMARY KEY,  
+  NOME VARCHAR(50) NOT NULL, 
+  DATANASCIMENTO DATE NOT NULL, 
+  SEXO CHAR(1) NOT NULL, 
+  CEP CHAR(9) NULL, 
+  ENDERECO VARCHAR(40) NULL, 
+  NUMERO INTEGER NULL, 
+  COMPLEMENTO VARCHAR(80) NULL, 
+  BAIRRO VARCHAR(40) NULL, 
+  ESTADO CHAR(2) NULL, 
+  CIDADE VARCHAR(40) NULL);
+
+3.
+INSERT INTO dbclientes.cliente (ID, NOME, DATANASCIMENTO, SEXO, CEP, ENDERECO, NUMERO, COMPLEMENTO, BAIRRO, ESTADO, CIDADE)
+VALUES
+(1, 'Leonardo Morais', '1994-07-20', 'M', '87100-900', 'Rua Paranaguá', 565, 'Teste Alteração', 'Zona 7', 'PR', 'Maringá'),
+(2, 'Lavinia Correia Cunha', '1985-05-19', 'F', '40325-690', '3ª Travessa São Lourenço', 283, NULL, NULL, 'BA', 'Salvador'),
+(3, 'Thaís Pereira Melo', '1995-01-14', 'F', '89022-230', 'Rua Mário Cabral e Silva', 1764, NULL, NULL, 'SC', 'Blumenau'),
+(4, 'Bianca Silva Martins', '1994-07-20', 'F', '08081-170', 'Rua Salvador Fernandes Cardia', 1669, NULL, NULL, 'SP', 'São Paulo'),
+(5, 'Isabelle Rocha Martins', '1939-10-10', 'F', '13054-048', 'Praça Dezoito', 1389, NULL, NULL, 'SP', 'Campinas'),
+(6, 'Fábio Silva Rocha', '1985-02-27', 'M', '07042-180', 'Rua Soldado Hamilton da Silva Costa', 1484, NULL, NULL, 'SP', 'Guarulhos'),
+(7, 'Luiz Ribeiro Lima', '1940-11-21', 'M', '60874-750', 'Rua Victor Estevão', 70, NULL, NULL, 'CE', 'Fortaleza'),
+(8, 'Thiago Correia Ferreira', '1941-09-08', 'M', '05088-080', 'Praça do Maçon', 1415, NULL, NULL, 'SP', 'São Paulo'),
+(9, 'Pedro Dias Lima', '1995-10-01', 'M', '83305-500', 'Alameda dos Coloreiros', 1607, NULL, NULL, 'PR', 'Piraquara'),
+(10, 'Lucas Ferreira Rocha', '2000-04-01', 'M', '66075-770', 'Alameda Belém', 1574, NULL, NULL, 'PA', 'Belém');
