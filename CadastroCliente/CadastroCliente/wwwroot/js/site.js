@@ -1,8 +1,3 @@
-﻿function BuscarCepClick() {
-    alert("CLICK");
-}
-
-
 function BuscarCep() {
     var cepInformado = $('#Cep').val();
 
